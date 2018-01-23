@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Hello React!</title>
+    <script src="https://cdn.bootcss.com/react/15.4.2/react.min.js"></script>
+    <script src="https://cdn.bootcss.com/react/15.4.2/react-dom.min.js"></script>
+    <script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="example"></div>
+    <script type="text/babel">
+      var HelloMessage = React.createClass({
+        render: function() {
+          return <h1>Hello World From Component！</h1>;
+        }
+      });
+      var ComWithName = React.createClass({
+          render: function () {
+            return <div>
+                    <h1>Component with name</h1>
+                    <p>name=`{this.props.name}`</p>
+                    <p>none=`{this.props.none}`</p>
+                </div>;
+          }
+      })
+      ReactDOM.render(
+        <div>
+            <HelloMessage />
+            <ComWithName name="outside"/>
+        </div>
+        , document.getElementById('example')
+      );
+    </script>
+</body>
+
+</html>
